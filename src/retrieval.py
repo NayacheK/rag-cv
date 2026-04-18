@@ -1,5 +1,11 @@
+import warnings
+warnings.filterwarnings("ignore")
+import os
+os.environ["HF_HUB_DISABLE_SYMLINKS_WARNING"] = "1"
+
 import chromadb
 from sentence_transformers import SentenceTransformer
+
 
 # --- Constantes ---
 CHROMA_DIR = "chroma_db"

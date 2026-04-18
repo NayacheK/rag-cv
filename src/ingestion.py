@@ -1,7 +1,13 @@
+import warnings
+warnings.filterwarnings("ignore")
+import os
+os.environ["HF_HUB_DISABLE_SYMLINKS_WARNING"] = "1"
+
 import fitz  # PyMuPDF
 import chromadb
 from sentence_transformers import SentenceTransformer
 import os
+
 
 # --- Constantes ---
 PDF_PATH = "data/CV_Alternance_DS_Chayane_KHA.pdf"

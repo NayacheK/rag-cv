@@ -2,7 +2,8 @@ import warnings
 warnings.filterwarnings("ignore")
 import os
 os.environ["HF_HUB_DISABLE_SYMLINKS_WARNING"] = "1"
-
+os.environ["TRANSFORMERS_VERBOSITY"] = "error"
+os.environ["TOKENIZERS_PARALLELISM"] = "false"
 import sys
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
@@ -27,7 +28,7 @@ def main():
         
         print("\n⏳ Recherche en cours...\n")
         reponse = generer_reponse(question)
-        print(f"🤖 Réponse :\n{reponse}")
+        print(f"\n🤖 Réponse :\n{reponse}")
         print("\n" + "-" * 50 + "\n")
 
 if __name__ == "__main__":

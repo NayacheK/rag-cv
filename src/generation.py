@@ -1,3 +1,8 @@
+import warnings
+warnings.filterwarnings("ignore")
+import os
+os.environ["HF_HUB_DISABLE_SYMLINKS_WARNING"] = "1"
+
 import os
 from dotenv import load_dotenv
 import sys
@@ -5,6 +10,7 @@ import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from src.retrieval import rechercher
 from groq import Groq
+
 
 # Charger la clé API depuis .env
 load_dotenv()
